@@ -2,7 +2,6 @@ import Image from "next/image";
 import { 
   ChevronDown, 
   MapPin, 
-  Play, 
   Check, 
   ArrowRight,
   Star,
@@ -46,10 +45,9 @@ export default function Home() {
           </Link>
         </nav>
 
-        <div className="flex items-center gap-6">
-          <Link href="#" className="text-sm font-medium text-gray-900 hidden sm:block">Log in</Link>
+        <div className="flex items-center">
           <Link href="#" className="text-sm font-medium bg-[#FF552E] text-white px-5 py-2.5 rounded-xl hover:bg-[#E04825] transition-colors shadow-sm">
-            Start for free
+            Get Started
           </Link>
         </div>
       </header>
@@ -76,9 +74,6 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto pt-2">
             <Link href="#" className="flex items-center justify-center gap-2 w-full sm:w-auto bg-[#FF552E] text-white px-8 py-4 rounded-xl text-lg font-bold hover:bg-[#E04825] transition-colors shadow-[0_8px_20px_-6px_rgba(255,85,46,0.5)]">
               Start Building Free <ArrowRight className="w-5 h-5" />
-            </Link>
-            <Link href="#" className="flex items-center justify-center gap-2 w-full sm:w-auto bg-white border border-gray-200 text-gray-900 px-8 py-4 rounded-xl text-lg font-bold hover:bg-gray-50 transition-colors shadow-sm">
-              <Play className="w-5 h-5 fill-gray-900" /> Watch demo
             </Link>
           </div>
 
@@ -164,7 +159,7 @@ export default function Home() {
               <div className="px-2 mt-2 shrink-0">
                 <div className="flex items-center gap-3 mb-3">
                   <h4 className="font-extrabold text-[16px] text-gray-900 flex gap-1.5 items-center tracking-tight">
-                    Guides <span className="text-gray-400">2</span>
+                    Spot Lists <span className="text-gray-400">2</span>
                   </h4>
                   <div className="flex-1 h-px bg-gray-200 mt-0.5"></div>
                 </div>
@@ -199,7 +194,7 @@ export default function Home() {
               {/* My Gear List Section */}
               <div className="px-2 mt-2 shrink-0">
                 <div className="flex items-center gap-3 mb-3">
-                  <h4 className="font-extrabold text-[16px] text-gray-900 tracking-tight">My Gear List</h4>
+                  <h4 className="font-extrabold text-[16px] text-gray-900 tracking-tight">Creator Kit</h4>
                   <div className="flex-1 h-px bg-gray-200 mt-0.5"></div>
                 </div>
                 
