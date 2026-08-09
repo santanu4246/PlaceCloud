@@ -18,7 +18,7 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "PlateMap - The ultimate link-in-bio for creators",
+  title: "PlaceCloud - The ultimate link-in-bio for creators",
   description: "Turn every spot from your videos into a shareable, monetizable city guide. Stop answering Where is this? in your DMs.",
 };
 

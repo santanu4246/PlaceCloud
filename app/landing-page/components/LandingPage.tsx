@@ -16,7 +16,7 @@ export default function LandingPage() {
             className="text-[22px] font-bold tracking-tight text-gray-900"
             style={{ fontFamily: 'var(--font-outfit), sans-serif' }}
           >
-            PlateMap
+            PlaceCloud
           </span>
         </div>
         
