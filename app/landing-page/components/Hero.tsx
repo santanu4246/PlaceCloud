@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Hero() {
   return (
     <main className="w-[95%] mx-auto mb-12 relative z-10">
@@ -69,7 +71,8 @@ export default function Hero() {
         {/* Buttons */}
         <div className="flex flex-col sm:flex-row items-center gap-4 mb-10">
           {/* Try It Now Button */}
-          <button 
+          <Link 
+            href="/sign-up"
             className="text-white font-bold text-[17px]"
             style={{
               display: 'flex',
@@ -85,10 +88,11 @@ export default function Hero() {
             }}
           >
             Try It Now
-          </button>
+          </Link>
 
           {/* Become a Creator Button (iOS 26 Glass Effect) */}
-          <div 
+          <Link 
+            href="/sign-up"
             className="relative flex items-center justify-center cursor-pointer" 
             style={{ 
               height: '56px',
@@ -133,7 +137,7 @@ export default function Hero() {
             <span className="relative font-bold text-[17px] text-[#222] z-10 flex items-center justify-center">
               Become a Creator
             </span>
-          </div>
+          </Link>
         </div>
 
         {/* Bottom Features */}

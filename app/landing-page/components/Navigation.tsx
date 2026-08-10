@@ -23,7 +23,7 @@ export default function Navigation() {
 
       <div className="flex items-center">
         <Link 
-          href="#" 
+          href="/sign-up" 
           className="text-white text-[15px] font-bold px-8 py-3"
           style={{
             fontFamily: 'var(--font-outfit), sans-serif',
