@@ -10,7 +10,7 @@ export default function LandingPage() {
   return (
     <div className="min-h-screen bg-[#FAFAFA] font-sans text-gray-900 relative overflow-x-hidden">
       {/* Navigation */}
-      <header className="flex items-center justify-between px-4 sm:px-8 py-4 sm:py-6 max-w-[1200px] mx-auto relative z-10">
+      <header className="flex items-center justify-between px-4 sm:px-8 py-4 sm:py-6 w-[95%] mx-auto relative z-10">
         <div className="flex items-center gap-2">
           <span 
             className="text-[22px] font-bold tracking-tight text-gray-900"
@@ -46,14 +46,14 @@ export default function LandingPage() {
       </header>
 
       {/* Hero Section */}
-      <main className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 mb-24 relative z-10">
+      <main className="w-[95%] mx-auto mb-24 relative z-10">
         <div 
           className="relative w-full rounded-b-[40px] rounded-t-none overflow-hidden flex flex-col items-center pt-4 sm:pt-14 pb-32 sm:pb-36 px-4"
           style={{
             backgroundImage: 'url(/heroImage.png)',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
-            minHeight: '85vh'
+            minHeight: 'min(85vh, 800px)'
           }}
         >
           {/* Top Pill */}
