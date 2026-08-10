@@ -44,8 +44,7 @@ export default function CreateProfileStep2Page() {
           />
         </div>
 
-        <button 
-          type="button"
+        <Link href="/profile-ready"
           className="text-white font-bold text-[15px] w-full py-4 rounded-xl hover:opacity-90 transition-opacity mt-4 flex items-center justify-center"
           style={{
             fontFamily: 'Inter, sans-serif',
@@ -54,7 +53,7 @@ export default function CreateProfileStep2Page() {
           }}
         >
           Create Your Profile Now
-        </button>
+        </Link>
       </form>
     </div>
   );

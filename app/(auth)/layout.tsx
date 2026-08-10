@@ -10,9 +10,9 @@ export default function AuthLayout({
     <div className="flex min-h-screen w-full bg-white text-gray-900">
       {/* Left Side - Image */}
       <div className="hidden lg:flex lg:w-1/2 relative bg-white overflow-hidden items-center justify-center lg:justify-end p-12 lg:pr-8">
-        <div className="relative w-full h-full max-w-[600px] max-h-[600px]">
+        <div className="relative w-full h-full max-w-[800px] max-h-[800px]">
           <Image
-            src="/onboarding/sideimg.png"
+            src="/onboarding/auth-bg.png"
             alt="Auth Image"
             fill
             className="object-contain"
