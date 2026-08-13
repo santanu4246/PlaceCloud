@@ -41,7 +41,7 @@ export default function Sidebar() {
 
   return (
     <aside 
-      className={`relative h-screen bg-white border-r border-[#E5E5E5] transition-[width] duration-300 ease-in-out flex flex-col flex-shrink-0 ${isCollapsed ? 'w-[72px]' : 'w-64'}`}
+      className={`relative h-screen bg-white border-r border-[#E5E5E5] transition-[width] duration-300 ease-in-out flex flex-col flex-shrink-0 ${isCollapsed ? 'w-[72px]' : 'w-56'}`}
     >
       <div className="flex flex-col h-full overflow-hidden whitespace-nowrap">
         {/* Header */}
