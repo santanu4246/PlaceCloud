@@ -68,8 +68,8 @@ export default function SignInPage() {
           </Link>
         </div>
 
-        <button 
-          className="text-white font-bold text-[15px] w-full py-4 rounded-[12px] hover:opacity-90 transition-opacity mt-2"
+        <Link href="/dashboard"
+          className="text-white font-bold text-[15px] w-full py-4 rounded-[12px] hover:opacity-90 transition-opacity mt-2 flex items-center justify-center text-center"
           style={{
             fontFamily: 'Inter, sans-serif',
             background: 'linear-gradient(180deg, rgba(255, 255, 255, 0.45) 0%, rgba(255, 255, 255, 0) 65%), #EA5E33',
@@ -77,7 +77,7 @@ export default function SignInPage() {
           }}
         >
           Sign In
-        </button>
+        </Link>
       </form>
 
       <p className="text-center text-[14px] text-[#666] mt-8" style={{ fontFamily: 'Inter, sans-serif' }}>

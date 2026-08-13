@@ -44,7 +44,7 @@ export default function CreateProfileStep2Page() {
           />
         </div>
 
-        <Link href="/profile-ready"
+        <Link href="/dashboard"
           className="text-white font-bold text-[15px] w-full py-4 rounded-xl hover:opacity-90 transition-opacity mt-4 flex items-center justify-center"
           style={{
             fontFamily: 'Inter, sans-serif',
