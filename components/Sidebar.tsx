@@ -35,9 +35,9 @@ export default function Sidebar() {
 
   const navItems = [
     { label: "Home", href: "/dashboard", Icon: HouseIcon },
-    { label: "Gear List", href: "/gear-list", Icon: GearListIcon },
-    { label: "Guides", href: "/guides", Icon: MapTrifoldIcon },
-    { label: "Customers", href: "/customers", Icon: UsersIcon },
+    { label: "Equipment", href: "/gear-list", Icon: GearListIcon },
+    { label: "Resources", href: "/guides", Icon: MapTrifoldIcon },
+    { label: "Clients", href: "/customers", Icon: UsersIcon },
   ];
 
   return (
@@ -160,7 +160,7 @@ export default function Sidebar() {
               <PageCustomizationIcon className={isActive("/page-customization") ? "text-white" : "text-inherit"} />
             </div>
             <span className={`transition-[max-width,opacity,margin] duration-300 overflow-hidden whitespace-nowrap ${isCollapsed ? 'max-w-0 opacity-0 ml-0' : 'max-w-[200px] opacity-100 ml-3'}`}>
-              Page Customization
+              Appearance
             </span>
           </Link>
 
