@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
-import { HouseIcon, MapTrifoldIcon, UsersIcon, ChartIcon, SettingIcon, GearListIcon } from "./icons";
+import { HouseIcon, MapTrifoldIcon, UsersIcon, ChartIcon, SettingIcon, GearListIcon, SubscriptionIcon, PageCustomizationIcon } from "./icons";
 
 export default function Sidebar() {
   const pathname = usePathname();
@@ -42,7 +42,7 @@ export default function Sidebar() {
 
   return (
     <aside 
-      className={`relative h-screen bg-white border-r border-[#E5E5E5] transition-[width] duration-300 ease-in-out flex flex-col flex-shrink-0 ${isCollapsed ? 'w-[72px]' : 'w-56'}`}
+      className={`relative h-screen bg-white border-r border-[#E5E5E5] transition-[width] duration-300 ease-in-out flex flex-col flex-shrink-0 ${isCollapsed ? 'w-[72px]' : 'w-64'}`}
     >
       <div className="flex flex-col h-full overflow-hidden whitespace-nowrap">
         {/* Header */}
@@ -127,7 +127,43 @@ export default function Sidebar() {
         </nav>
 
         {/* Footer Navigation */}
-        <div className={`py-4 border-t border-[#E5E5E5] flex flex-col gap-2 flex-shrink-0 ${isCollapsed ? 'px-3' : 'px-4'}`}>
+        <div className={`py-4 flex flex-col gap-2 flex-shrink-0 ${isCollapsed ? 'px-3' : 'px-4'}`}>
+          <div className="w-full h-px bg-[#E5E5E5] mb-2"></div>
+          
+          <Link
+            href="/subscription"
+            onPointerDown={() => setPendingRoute('/subscription')}
+            className={`flex items-center px-3 h-10 text-[16px] font-semibold rounded-md ${
+              isActive("/subscription")
+                ? "bg-[#EA5E33] text-white" 
+                : "text-[#171717] hover:bg-[#F7F7F7]"
+            }`}
+          >
+            <div className="flex-shrink-0 w-6 h-6 flex items-center justify-center">
+              <SubscriptionIcon className={isActive("/subscription") ? "text-white" : "text-inherit"} />
+            </div>
+            <span className={`transition-[max-width,opacity,margin] duration-300 overflow-hidden whitespace-nowrap ${isCollapsed ? 'max-w-0 opacity-0 ml-0' : 'max-w-[200px] opacity-100 ml-3'}`}>
+              Subscription
+            </span>
+          </Link>
+
+          <Link
+            href="/page-customization"
+            onPointerDown={() => setPendingRoute('/page-customization')}
+            className={`flex items-center px-3 h-10 text-[16px] font-semibold rounded-md ${
+              isActive("/page-customization")
+                ? "bg-[#EA5E33] text-white" 
+                : "text-[#171717] hover:bg-[#F7F7F7]"
+            }`}
+          >
+            <div className="flex-shrink-0 w-6 h-6 flex items-center justify-center">
+              <PageCustomizationIcon className={isActive("/page-customization") ? "text-white" : "text-inherit"} />
+            </div>
+            <span className={`transition-[max-width,opacity,margin] duration-300 overflow-hidden whitespace-nowrap ${isCollapsed ? 'max-w-0 opacity-0 ml-0' : 'max-w-[200px] opacity-100 ml-3'}`}>
+              Page Customization
+            </span>
+          </Link>
+
           <Link
             href="/settings"
             onPointerDown={() => setPendingRoute('/settings')}
