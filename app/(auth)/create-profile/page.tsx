@@ -4,7 +4,7 @@ import Image from "next/image";
 export default function CreateProfilePage() {
   return (
     <div className="w-full flex flex-col pt-4">
-      
+
       <h2 className="text-[28px] font-bold text-[#222] mb-8" style={{ fontFamily: 'Inter, sans-serif' }}>
         Let&apos;s Create Your Profile
       </h2>
@@ -14,18 +14,18 @@ export default function CreateProfilePage() {
         <div className="flex gap-4">
           <div className="flex flex-col gap-2 flex-1">
             <label className="text-[13px] font-medium text-[#222]" style={{ fontFamily: 'Inter, sans-serif' }}>First Name</label>
-            <input 
-              type="text" 
-              placeholder="John" 
+            <input
+              type="text"
+              placeholder="Santanu"
               className="w-full bg-white border border-[#E5E5E5] rounded-xl px-4 py-3 text-[14px] text-[#222] placeholder:text-[#999] focus:ring-2 focus:ring-[#EA5E33] focus:border-[#EA5E33] outline-none transition-all"
               style={{ fontFamily: 'Inter, sans-serif' }}
             />
           </div>
           <div className="flex flex-col gap-2 flex-1">
             <label className="text-[13px] font-medium text-[#222]" style={{ fontFamily: 'Inter, sans-serif' }}>Last Name</label>
-            <input 
-              type="text" 
-              placeholder="Doe" 
+            <input
+              type="text"
+              placeholder="Doe"
               className="w-full bg-white border border-[#E5E5E5] rounded-xl px-4 py-3 text-[14px] text-[#222] placeholder:text-[#999] focus:ring-2 focus:ring-[#EA5E33] focus:border-[#EA5E33] outline-none transition-all"
               style={{ fontFamily: 'Inter, sans-serif' }}
             />
@@ -35,22 +35,22 @@ export default function CreateProfilePage() {
         {/* About You Field */}
         <div className="flex flex-col gap-2">
           <label className="text-[13px] font-medium text-[#222]" style={{ fontFamily: 'Inter, sans-serif' }}>About you</label>
-          <textarea 
-            placeholder="A brief introduction about you..." 
+          <textarea
+            placeholder="A brief introduction about you..."
             className="w-full bg-white border border-[#E5E5E5] rounded-xl px-4 py-3 text-[14px] text-[#222] placeholder:text-[#999] focus:ring-2 focus:ring-[#EA5E33] focus:border-[#EA5E33] outline-none transition-all resize-none h-32"
             style={{ fontFamily: 'Inter, sans-serif' }}
           ></textarea>
         </div>
-        
+
         {/* Social Media Links */}
         <div className="flex flex-col gap-4 mt-2">
           <label className="text-[14px] font-medium text-[#222]" style={{ fontFamily: 'Inter, sans-serif' }}>Your Social Media Links</label>
-          
+
           {/* Instagram */}
           <div className="relative">
-            <input 
-              type="text" 
-              placeholder="@username" 
+            <input
+              type="text"
+              placeholder="@username"
               className="w-full bg-white border border-[#E5E5E5] rounded-xl pl-4 pr-11 py-3.5 text-[14px] text-[#222] placeholder:text-[#999] focus:ring-2 focus:ring-[#EA5E33] focus:border-[#EA5E33] outline-none transition-all"
               style={{ fontFamily: 'Inter, sans-serif' }}
             />
@@ -61,9 +61,9 @@ export default function CreateProfilePage() {
 
           {/* Snapchat */}
           <div className="relative">
-            <input 
-              type="text" 
-              placeholder="@username" 
+            <input
+              type="text"
+              placeholder="@username"
               className="w-full bg-white border border-[#E5E5E5] rounded-xl pl-4 pr-11 py-3.5 text-[14px] text-[#222] placeholder:text-[#999] focus:ring-2 focus:ring-[#EA5E33] focus:border-[#EA5E33] outline-none transition-all"
               style={{ fontFamily: 'Inter, sans-serif' }}
             />
@@ -76,9 +76,9 @@ export default function CreateProfilePage() {
 
           {/* Facebook */}
           <div className="relative">
-            <input 
-              type="text" 
-              placeholder="@username" 
+            <input
+              type="text"
+              placeholder="@username"
               className="w-full bg-white border border-[#E5E5E5] rounded-xl pl-4 pr-11 py-3.5 text-[14px] text-[#222] placeholder:text-[#999] focus:ring-2 focus:ring-[#EA5E33] focus:border-[#EA5E33] outline-none transition-all"
               style={{ fontFamily: 'Inter, sans-serif' }}
             />
@@ -89,9 +89,9 @@ export default function CreateProfilePage() {
 
           {/* X / Twitter */}
           <div className="relative">
-            <input 
-              type="text" 
-              placeholder="@username" 
+            <input
+              type="text"
+              placeholder="@username"
               className="w-full bg-white border border-[#E5E5E5] rounded-xl pl-4 pr-11 py-3.5 text-[14px] text-[#222] placeholder:text-[#999] focus:ring-2 focus:ring-[#EA5E33] focus:border-[#EA5E33] outline-none transition-all"
               style={{ fontFamily: 'Inter, sans-serif' }}
             />

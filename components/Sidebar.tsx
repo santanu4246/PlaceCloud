@@ -35,7 +35,6 @@ export default function Sidebar() {
 
   const navItems = [
     { label: "Home", href: "/dashboard", Icon: HouseIcon },
-    { label: "Equipment", href: "/gear-list", Icon: GearListIcon },
     { label: "Resources", href: "/guides", Icon: MapTrifoldIcon },
     { label: "Clients", href: "/customers", Icon: UsersIcon },
   ];
@@ -78,9 +77,9 @@ export default function Sidebar() {
                 <div className="flex-shrink-0 w-6 h-6 flex items-center justify-center">
                   <item.Icon className={active ? "text-white" : "text-inherit"} />
                 </div>
-                <span className={`transition-[max-width,opacity,margin] duration-300 overflow-hidden whitespace-nowrap ${isCollapsed ? 'max-w-0 opacity-0 ml-0' : 'max-w-[200px] opacity-100 ml-3'}`}>
-                  {item.label}
-                </span>
+                <div className={`flex items-center transition-[max-width,opacity,margin] duration-300 overflow-hidden whitespace-nowrap ${isCollapsed ? 'max-w-0 opacity-0 ml-0' : 'max-w-[200px] opacity-100 ml-3'}`}>
+                  <span>{item.label}</span>
+                </div>
               </Link>
             );
           })}
@@ -124,6 +123,27 @@ export default function Sidebar() {
               </span>
             </div>
           )}
+
+          {/* Equipment - Premium */}
+          <Link
+            href="/gear-list"
+            onPointerDown={() => setPendingRoute('/gear-list')}
+            className={`flex items-center px-3 h-10 text-[16px] font-semibold rounded-md ${
+              isActive("/gear-list")
+                ? "bg-[#EA5E33] text-white" 
+                : "text-[#171717] hover:bg-[#F7F7F7]"
+            }`}
+          >
+            <div className="flex-shrink-0 w-6 h-6 flex items-center justify-center">
+              <GearListIcon className={isActive("/gear-list") ? "text-white" : "text-inherit"} />
+            </div>
+            <div className={`flex flex-1 items-center justify-between transition-[max-width,opacity,margin] duration-300 overflow-hidden whitespace-nowrap ${isCollapsed ? 'max-w-0 opacity-0 ml-0' : 'max-w-[200px] opacity-100 ml-3'}`}>
+              <span>Equipment</span>
+              <span className={`px-2 py-0.5 rounded-md text-[11px] font-bold ${isActive("/gear-list") ? 'bg-white text-[#EA5E33]' : 'bg-[#EA5E33] text-white'}`}>
+                Premium
+              </span>
+            </div>
+          </Link>
         </nav>
 
         {/* Footer Navigation */}

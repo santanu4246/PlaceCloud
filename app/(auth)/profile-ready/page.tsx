@@ -4,12 +4,12 @@ import Image from "next/image";
 export default function ProfileReadyPage() {
   return (
     <div className="w-full flex flex-col items-center justify-center pt-8 text-center">
-      
+
       {/* Double Tick Icon */}
       <div className="mb-8 flex items-center justify-center w-28 h-28 bg-[#EA5E33]/25 rounded-full">
         <svg width="72" height="72" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M6 26.6666C6 26.6666 9 28 13 34C13 34 13.5697 33.0384 14.6427 31.5052M34 12C29.417 14.2915 24.6238 19.1036 20.7758 23.6446" stroke="#EA5E33" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round"/>
-          <path d="M16 26.6666C16 26.6666 19 28 23 34C23 34 34 17 44 12" stroke="#EA5E33" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round"/>
+          <path d="M6 26.6666C6 26.6666 9 28 13 34C13 34 13.5697 33.0384 14.6427 31.5052M34 12C29.417 14.2915 24.6238 19.1036 20.7758 23.6446" stroke="#EA5E33" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" />
+          <path d="M16 26.6666C16 26.6666 19 28 23 34C23 34 34 17 44 12" stroke="#EA5E33" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
       </div>
 
@@ -25,7 +25,7 @@ export default function ProfileReadyPage() {
         {/* Link Box */}
         <div className="flex-1 bg-[#F5F5F5] rounded-xl px-5 py-3.5 flex items-center justify-center gap-6">
           <span className="text-[14px] text-[#222] font-semibold tracking-tight" style={{ fontFamily: 'Inter, sans-serif' }}>
-            placecloud.com/johndoe123
+            placecloud.com/Santanudoe123
           </span>
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#222" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
             <line x1="7" y1="17" x2="17" y2="7"></line>
@@ -38,7 +38,7 @@ export default function ProfileReadyPage() {
         </button>
       </div>
 
-      <Link 
+      <Link
         href="/"
         className="text-white font-bold text-[15px] w-full max-w-[320px] py-4 rounded-xl hover:opacity-90 transition-opacity flex items-center justify-center gap-2"
         style={{
