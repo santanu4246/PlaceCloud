@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
-import { HouseIcon, MapTrifoldIcon, UsersIcon, ChartIcon, SettingIcon } from "./icons";
+import { HouseIcon, MapTrifoldIcon, UsersIcon, ChartIcon, SettingIcon, GearListIcon } from "./icons";
 
 export default function Sidebar() {
   const pathname = usePathname();
@@ -35,6 +35,7 @@ export default function Sidebar() {
 
   const navItems = [
     { label: "Home", href: "/dashboard", Icon: HouseIcon },
+    { label: "Gear List", href: "/gear-list", Icon: GearListIcon },
     { label: "Guides", href: "/guides", Icon: MapTrifoldIcon },
     { label: "Customers", href: "/customers", Icon: UsersIcon },
   ];
