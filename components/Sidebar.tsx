@@ -22,6 +22,7 @@ export default function Sidebar() {
   
   const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
   const [isCollapsed, setIsCollapsed] = useState(false);
+  const [isMobileOpen, setIsMobileOpen] = useState(false);
   
   // Hardcoded for now since Supabase is removed
   const userName = "Santanu";
@@ -40,9 +41,35 @@ export default function Sidebar() {
   ];
 
   return (
-    <aside 
-      className={`relative h-screen bg-white border-r border-[#E5E5E5] transition-[width] duration-300 ease-in-out flex flex-col flex-shrink-0 ${isCollapsed ? 'w-[72px]' : 'w-64'}`}
-    >
+    <>
+      {/* Mobile Top Bar */}
+      <div className="md:hidden flex items-center justify-between h-16 bg-white border-b border-[#E5E5E5] px-6 w-full flex-shrink-0 z-40">
+        <span className="text-xl font-extrabold text-[#222]">PlaceCloud.</span>
+        <button 
+          onClick={() => setIsMobileOpen(true)}
+          className="p-2 -mr-2 text-[#444] hover:bg-gray-100 rounded-md transition-colors"
+        >
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+
+      {/* Mobile Overlay */}
+      {isMobileOpen && (
+        <div 
+          className="md:hidden fixed inset-0 bg-black/50 z-40 backdrop-blur-sm"
+          onClick={() => setIsMobileOpen(false)}
+        />
+      )}
+
+      {/* Sidebar */}
+      <aside 
+        className={`fixed md:relative top-0 left-0 h-screen bg-white border-r border-[#E5E5E5] transition-all duration-300 ease-in-out flex flex-col flex-shrink-0 z-50 
+          ${isCollapsed ? 'md:w-[72px]' : 'md:w-64'}
+          ${isMobileOpen ? 'translate-x-0 w-64' : '-translate-x-full md:translate-x-0'}
+        `}
+      >
       <div className="flex flex-col h-full overflow-hidden whitespace-nowrap">
         {/* Header */}
         <div className="h-16 relative flex items-center border-b border-[#E5E5E5] flex-shrink-0">
@@ -248,5 +275,6 @@ export default function Sidebar() {
         </div>
       </div>
     </aside>
+    </>
   );
 }

@@ -57,7 +57,7 @@ export default function DashboardHome() {
 
   if (view === "all") {
     return (
-      <div className="p-10 w-full min-h-screen">
+      <div className="p-5 md:p-10 w-full min-h-screen">
         <div className="mb-8">
           <button onClick={() => setView("dashboard")} className="flex items-center gap-3 text-[26px] font-bold text-[#111] hover:text-[#EA5E33] transition-colors">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
@@ -110,9 +110,9 @@ export default function DashboardHome() {
   }
 
   return (
-    <div className="p-10 w-full">
-      <div className="mb-14">
-        <h1 className="text-[28px] font-bold text-[#111] mb-6">Let's build your world, Santanu</h1>
+    <div className="p-5 md:p-10 w-full">
+      <div className="mb-10 md:mb-14">
+        <h1 className="text-[24px] md:text-[28px] font-bold text-[#111] mb-4 md:mb-6 leading-tight">Let's build your world, Santanu</h1>
 
         <div className="flex items-center gap-3">
           <div className="inline-flex items-center gap-2 bg-[#EA5E33]/10 px-3 py-1.5 rounded-lg border border-[#EA5E33]/20">
@@ -130,8 +130,8 @@ export default function DashboardHome() {
         </div>
       </div>
 
-      <div className="mb-6 flex items-center justify-between">
-        <h2 className="text-[20px] font-bold text-[#111] flex items-center gap-2">
+      <div className="mb-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <h2 className="text-[18px] md:text-[20px] font-bold text-[#111] flex items-center gap-2">
           New Requests <span className="text-[#999] font-medium">6</span>
         </h2>
         <button onClick={() => setView("all")} className="flex items-center gap-1.5 text-[14px] font-semibold text-[#111] bg-[#F5F5F5] hover:bg-[#E5E5E5] px-3.5 py-2 rounded-[10px] transition-colors">
@@ -192,10 +192,11 @@ export default function DashboardHome() {
         ))}
       </div>
 
-      <div className="mt-14">
-        <h2 className="text-[26px] font-bold text-[#111] mb-6">Request Details</h2>
-        <div className="bg-white border border-[#F0F0F0] rounded-[24px] shadow-[0_2px_12px_rgba(0,0,0,0.04)] overflow-visible">
-          <table className="w-full text-left border-collapse">
+      <div className="mt-10 md:mt-14">
+        <h2 className="text-[22px] md:text-[26px] font-bold text-[#111] mb-6">Request Details</h2>
+        <div className="bg-white border border-[#F0F0F0] rounded-[24px] shadow-[0_2px_12px_rgba(0,0,0,0.04)] overflow-hidden">
+          <div className="overflow-x-auto pb-10 -mb-10">
+            <table className="w-full text-left border-collapse min-w-[900px]">
             <thead>
               <tr className="border-b border-[#F0F0F0]">
                 <th className="px-8 py-5 text-[15px] font-medium text-[#666] w-[60px]">#</th>
@@ -286,6 +287,7 @@ export default function DashboardHome() {
               ))}
             </tbody>
           </table>
+          </div>
         </div>
       </div>
     </div>

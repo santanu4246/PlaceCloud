@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { MapTrifoldIcon } from "@/components/icons";
 
 function GlassPill({ children }: { children: React.ReactNode }) {
@@ -27,6 +27,8 @@ function GlassPill({ children }: { children: React.ReactNode }) {
 }
 
 export default function DashboardGuides() {
+  const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
+
   return (
     <div className="p-10 w-full min-h-screen bg-[#FAFAFA]">
       <div className="flex items-center justify-between mb-10 w-full">
@@ -88,7 +90,10 @@ export default function DashboardGuides() {
                 <img src="/home/edit.svg" alt="Edit" className="w-[18px] h-[18px]" />
                 Edit Location
               </button>
-              <button className="flex-1 bg-[#FFEBEB] hover:bg-[#FFD6D6] py-2.5 rounded-[12px] flex items-center justify-center gap-2 text-[13.5px] font-bold text-[#E53935] transition-colors">
+              <button 
+                onClick={() => setIsDeleteModalOpen(true)}
+                className="flex-1 bg-[#FFEBEB] hover:bg-[#FFD6D6] py-2.5 rounded-[12px] flex items-center justify-center gap-2 text-[13.5px] font-bold text-[#E53935] transition-colors"
+              >
                 <img src="/home/delete.svg" alt="Delete" className="w-[18px] h-[18px]" />
                 Delete
               </button>
@@ -96,6 +101,38 @@ export default function DashboardGuides() {
           </div>
         ))}
       </div>
+
+      {/* Delete Confirmation Modal */}
+      {isDeleteModalOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-[2px] p-4">
+          <div className="bg-white rounded-[24px] p-8 max-w-[380px] w-full flex flex-col items-center shadow-2xl animate-in fade-in zoom-in duration-200">
+            <div className="w-16 h-16 bg-[#FFEBEB] rounded-[16px] flex items-center justify-center mb-5">
+              <img src="/home/delete.svg" alt="Delete" className="w-7 h-7" />
+            </div>
+            
+            <h2 className="text-[22px] font-bold text-[#111] mb-2">Delete Location</h2>
+            
+            <p className="text-[#666] text-[15px] leading-relaxed text-center mb-8 px-1">
+              By Deleting your location you lose all location information, Do you want to proceed?
+            </p>
+            
+            <div className="flex w-full gap-3">
+              <button 
+                onClick={() => setIsDeleteModalOpen(false)}
+                className="flex-1 py-3.5 rounded-xl font-bold text-[15px] text-[#111] bg-[#F5F5F5] hover:bg-[#EAEAEA] transition-colors"
+              >
+                Cancel
+              </button>
+              <button 
+                onClick={() => setIsDeleteModalOpen(false)}
+                className="flex-1 py-3.5 rounded-xl font-bold text-[15px] text-white bg-[#E53935] hover:bg-[#D32F2F] transition-colors shadow-sm"
+              >
+                Delete Location
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
