@@ -34,9 +34,9 @@ export default function Sidebar() {
   };
 
   const navItems = [
-    { label: "Home", href: "/dashboard", Icon: HouseIcon },
-    { label: "Resources", href: "/guides", Icon: MapTrifoldIcon },
-    { label: "Clients", href: "/customers", Icon: UsersIcon },
+    { label: "Home", href: "/home", Icon: HouseIcon },
+    { label: "Locations", href: "/locations", Icon: MapTrifoldIcon },
+    { label: "Clients", href: "/clients", Icon: UsersIcon },
   ];
 
   return (
@@ -126,20 +126,20 @@ export default function Sidebar() {
 
           {/* Equipment - Premium */}
           <Link
-            href="/gear-list"
-            onPointerDown={() => setPendingRoute('/gear-list')}
+            href="/equipment"
+            onPointerDown={() => setPendingRoute('/equipment')}
             className={`flex items-center px-3 h-10 text-[16px] font-semibold rounded-md ${
-              isActive("/gear-list")
+              isActive("/equipment")
                 ? "bg-[#EA5E33] text-white" 
                 : "text-[#171717] hover:bg-[#F7F7F7]"
             }`}
           >
             <div className="flex-shrink-0 w-6 h-6 flex items-center justify-center">
-              <GearListIcon className={isActive("/gear-list") ? "text-white" : "text-inherit"} />
+              <GearListIcon className={isActive("/equipment") ? "text-white" : "text-inherit"} />
             </div>
             <div className={`flex flex-1 items-center justify-between transition-[max-width,opacity,margin] duration-300 overflow-hidden whitespace-nowrap ${isCollapsed ? 'max-w-0 opacity-0 ml-0' : 'max-w-[200px] opacity-100 ml-3'}`}>
               <span>Equipment</span>
-              <span className={`px-2 py-0.5 rounded-md text-[11px] font-bold ${isActive("/gear-list") ? 'bg-white text-[#EA5E33]' : 'bg-[#EA5E33] text-white'}`}>
+              <span className={`px-2 py-0.5 rounded-md text-[11px] font-bold ${isActive("/equipment") ? 'bg-white text-[#EA5E33]' : 'bg-[#EA5E33] text-white'}`}>
                 Premium
               </span>
             </div>
@@ -168,16 +168,16 @@ export default function Sidebar() {
           </Link>
 
           <Link
-            href="/page-customization"
-            onPointerDown={() => setPendingRoute('/page-customization')}
+            href="/appearance"
+            onPointerDown={() => setPendingRoute('/appearance')}
             className={`flex items-center px-3 h-10 text-[16px] font-semibold rounded-md ${
-              isActive("/page-customization")
+              isActive("/appearance")
                 ? "bg-[#EA5E33] text-white" 
                 : "text-[#171717] hover:bg-[#F7F7F7]"
             }`}
           >
             <div className="flex-shrink-0 w-6 h-6 flex items-center justify-center">
-              <PageCustomizationIcon className={isActive("/page-customization") ? "text-white" : "text-inherit"} />
+              <PageCustomizationIcon className={isActive("/appearance") ? "text-white" : "text-inherit"} />
             </div>
             <span className={`transition-[max-width,opacity,margin] duration-300 overflow-hidden whitespace-nowrap ${isCollapsed ? 'max-w-0 opacity-0 ml-0' : 'max-w-[200px] opacity-100 ml-3'}`}>
               Appearance

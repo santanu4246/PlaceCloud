@@ -68,7 +68,7 @@ export default function SignInPage() {
           </Link>
         </div>
 
-        <Link href="/dashboard"
+        <Link href="/home"
           className="text-white font-bold text-[15px] w-full py-4 rounded-[12px] hover:opacity-90 transition-opacity mt-2 flex items-center justify-center text-center"
           style={{
             fontFamily: 'Inter, sans-serif',
