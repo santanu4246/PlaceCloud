@@ -87,10 +87,10 @@ export default function DashboardGuides() {
 
             {/* Action Buttons */}
             <div className="flex gap-3">
-              <button className="flex-1 bg-[#F5F5F5] hover:bg-[#EAEAEA] py-2.5 rounded-[12px] flex items-center justify-center gap-2 text-[13.5px] font-bold text-[#111] transition-colors">
+              <Link href={`/locations/${guide.id}/edit`} className="flex-1 bg-[#F5F5F5] hover:bg-[#EAEAEA] py-2.5 rounded-[12px] flex items-center justify-center gap-2 text-[13.5px] font-bold text-[#111] transition-colors">
                 <img src="/home/edit.svg" alt="Edit" className="w-[18px] h-[18px]" />
                 Edit Location
-              </button>
+              </Link>
               <button 
                 onClick={() => setIsDeleteModalOpen(true)}
                 className="flex-1 bg-[#FFEBEB] hover:bg-[#FFD6D6] py-2.5 rounded-[12px] flex items-center justify-center gap-2 text-[13.5px] font-bold text-[#E53935] transition-colors"
