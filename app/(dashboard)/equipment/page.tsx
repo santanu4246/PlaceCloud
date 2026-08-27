@@ -1,6 +1,7 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
+import Link from "next/link";
 
 const mockEquipment = [
   {
@@ -49,6 +50,24 @@ const mockEquipment = [
 ];
 
 export default function DashboardGearList() {
+  const [openDropdown, setOpenDropdown] = useState<number | null>(null);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setOpenDropdown(null);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  const toggleDropdown = (id: number, e: React.MouseEvent) => {
+    e.stopPropagation();
+    setOpenDropdown(openDropdown === id ? null : id);
+  };
+
   return (
     <div className="p-5 md:p-10 w-full min-h-screen bg-[#FAFAFA]">
       <div className="mb-10 w-full flex flex-col md:flex-row md:items-center justify-between gap-4 md:gap-6 relative">
@@ -57,7 +76,7 @@ export default function DashboardGearList() {
         </div>
         
         <div className="flex items-center gap-3 relative z-10 bg-[#FAFAFA] md:pl-4">
-          <button className="bg-[#EA5E33] hover:bg-[#D5522B] text-white font-bold text-[14px] px-5 py-2.5 rounded-[10px] flex items-center gap-2 transition-colors shadow-sm">
+          <Link href="/equipment/new" className="bg-[#EA5E33] hover:bg-[#D5522B] text-white font-bold text-[14px] px-5 py-2.5 rounded-[10px] flex items-center gap-2 transition-colors shadow-sm">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
               <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
               <line x1="3" y1="6" x2="21" y2="6"></line>
@@ -65,7 +84,7 @@ export default function DashboardGearList() {
               <path d="M9 13h6"></path>
             </svg>
             Add New Equipment
-          </button>
+          </Link>
         </div>
       </div>
 
@@ -82,20 +101,39 @@ export default function DashboardGearList() {
             <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent pointer-events-none"></div>
             
             {/* 3-Dot Menu */}
-            <button className="absolute top-4 right-4 bg-white/20 hover:bg-white/30 backdrop-blur-md rounded-[10px] p-2 transition-colors">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-                <circle cx="12" cy="12" r="1.5"></circle>
-                <circle cx="12" cy="5" r="1.5"></circle>
-                <circle cx="12" cy="19" r="1.5"></circle>
-              </svg>
-            </button>
+            <div className="absolute top-4 right-4 z-20" ref={openDropdown === item.id ? dropdownRef : null}>
+              <button 
+                onClick={(e) => toggleDropdown(item.id, e)}
+                className="bg-white/20 hover:bg-white/30 backdrop-blur-md rounded-[10px] p-2 transition-colors"
+              >
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                  <circle cx="12" cy="12" r="1.5"></circle>
+                  <circle cx="12" cy="5" r="1.5"></circle>
+                  <circle cx="12" cy="19" r="1.5"></circle>
+                </svg>
+              </button>
+              
+              {openDropdown === item.id && (
+                <div className="absolute right-0 top-10 bg-white border border-[#F0F0F0] rounded-[14px] shadow-[0_4px_24px_rgba(0,0,0,0.12)] py-2 w-[160px] text-left">
+                  <Link href={`/equipment/${item.id}/edit`} className="w-full px-4 py-2.5 text-[13.5px] font-bold text-[#111] hover:bg-gray-50 flex items-center gap-3 transition-colors">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+                    Edit
+                  </Link>
+                  <div className="h-[1px] bg-[#F0F0F0] my-1 mx-3"></div>
+                  <button className="w-full px-4 py-2.5 text-[13.5px] font-bold text-[#E53935] hover:bg-gray-50 flex items-center gap-3 transition-colors text-left">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M3 6h18"></path><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"></path><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"></path></svg>
+                    Delete
+                  </button>
+                </div>
+              )}
+            </div>
 
             {/* Content */}
-            <div className="absolute bottom-0 left-0 right-0 p-5 flex flex-col gap-1.5">
+            <div className="absolute bottom-0 left-0 right-0 p-5 flex flex-col gap-1.5 pointer-events-none">
               <h3 className="text-white text-[16px] font-bold">{item.title}</h3>
               <p className="text-white/70 text-[13px] line-clamp-2 leading-relaxed mb-1">{item.desc}</p>
               
-              <div className="flex flex-col gap-2 mt-1">
+              <div className="flex flex-col gap-2 mt-1 pointer-events-auto">
                 {item.promo && (
                   <button className="flex items-center gap-2 bg-white/15 hover:bg-white/25 backdrop-blur-md px-3 py-1.5 rounded-[8px] transition-colors w-fit group/btn">
                     <span className="text-white text-[12.5px] font-bold tracking-wide">{item.promo}</span>
