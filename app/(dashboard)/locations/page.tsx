@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Link from "next/link";
 import { MapTrifoldIcon } from "@/components/icons";
 
 function GlassPill({ children }: { children: React.ReactNode }) {
@@ -36,13 +37,13 @@ export default function DashboardGuides() {
           <h1 className="text-[28px] font-bold text-[#111] whitespace-nowrap">Your Locations</h1>
           <span className="text-[28px] font-bold text-[#D0D0D0]">0</span>
         </div>
-        <button className="bg-[#EA5E33] hover:bg-[#D5522B] text-white px-5 py-2.5 rounded-[12px] font-bold text-[15px] flex items-center gap-2 transition-colors whitespace-nowrap shadow-sm">
+        <Link href="/locations/new" className="bg-[#EA5E33] hover:bg-[#D5522B] text-white px-5 py-2.5 rounded-[12px] font-bold text-[15px] flex items-center gap-2 transition-colors whitespace-nowrap shadow-sm">
           <div className="relative flex items-center justify-center w-5 h-5">
             <MapTrifoldIcon className="w-5 h-5 text-white" />
             <div className="absolute -top-1 -right-1.5 bg-[#EA5E33] text-white text-[12px] leading-none font-black">+</div>
           </div>
           Add New Location
-        </button>
+        </Link>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
