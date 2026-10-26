@@ -112,7 +112,7 @@ export default function DashboardHome() {
   return (
     <div className="p-5 md:p-10 w-full">
       <div className="mb-10 md:mb-14">
-        <h1 className="text-[24px] md:text-[28px] font-bold text-[#111] mb-4 md:mb-6 leading-tight">Let's build your world, Santanu</h1>
+        <h1 className="text-[24px] md:text-[28px] font-bold text-[#111] mb-4 md:mb-6 leading-tight">Let&apos;s build your world, Santanu</h1>
 
         <div className="flex items-center gap-3">
           <div className="inline-flex items-center gap-2 bg-[#EA5E33]/10 px-3 py-1.5 rounded-lg border border-[#EA5E33]/20">

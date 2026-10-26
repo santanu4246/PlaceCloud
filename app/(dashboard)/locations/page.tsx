@@ -35,7 +35,7 @@ export default function DashboardGuides() {
       <div className="flex items-center justify-between mb-10 w-full">
         <div className="flex items-center gap-4">
           <h1 className="text-[28px] font-bold text-[#111] whitespace-nowrap">Your Locations</h1>
-          <span className="text-[28px] font-bold text-[#D0D0D0]">0</span>
+          <span className="text-[28px] font-bold text-[#D0D0D0]">4</span>
         </div>
         <Link href="/locations/new" className="bg-[#EA5E33] hover:bg-[#D5522B] text-white px-5 py-2.5 rounded-[12px] font-bold text-[15px] flex items-center gap-2 transition-colors whitespace-nowrap shadow-sm">
           <div className="relative flex items-center justify-center w-5 h-5">
@@ -48,21 +48,23 @@ export default function DashboardGuides() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
         {[
-          { id: 1, title: "Zion Narrows Basecamp", location: "Zion National Park, Utah", price: "$120" },
-          { id: 2, title: "Coastal Camp at Moon Bay", location: "Big Sur, California", price: "$150" },
-          { id: 3, title: "Joshua Tree Retreat", location: "Joshua Tree, California", price: "$95" }
+          { id: "nag-tibba", title: "Nag Tibba Trek", location: "Mussoorie, Uttarakhand, India", price: "$85", image: "/locations/nag-tibba/gallery-1.jpg" },
+          { id: 1, title: "Zion Narrows Basecamp", location: "Zion National Park, Utah", price: "$120", image: "/home/secenry.png" },
+          { id: 2, title: "Coastal Camp at Moon Bay", location: "Big Sur, California", price: "$150", image: "/home/secenry.png" },
+          { id: 3, title: "Joshua Tree Retreat", location: "Joshua Tree, California", price: "$95", image: "/home/secenry.png" }
         ].map((guide) => (
           <div key={guide.id} className="flex flex-col gap-3">
-            <div 
-              className="relative h-[250px] w-full p-4 flex flex-col justify-between rounded-[20px] overflow-hidden shadow-sm" 
+            <Link 
+              href={`/locations/${guide.id}`}
+              className="relative h-[250px] w-full p-4 flex flex-col justify-between rounded-[20px] overflow-hidden shadow-sm group cursor-pointer block" 
               style={{ 
-                backgroundImage: 'url(/home/secenry.png)', 
+                backgroundImage: `url(${guide.image})`, 
                 backgroundSize: 'cover', 
                 backgroundPosition: 'center' 
               }}
             >
               {/* Dark overlay for bottom text */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent pointer-events-none"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent group-hover:from-black/90 transition-all pointer-events-none"></div>
 
               {/* Top Pills */}
               <div className="relative z-10 flex items-center gap-2">
@@ -78,12 +80,12 @@ export default function DashboardGuides() {
               {/* Bottom Text and Price */}
               <div className="relative z-10 flex justify-between items-end">
                 <div>
-                  <h3 className="text-white font-bold text-[17px] mb-0.5">{guide.title}</h3>
+                  <h3 className="text-white font-bold text-[17px] mb-0.5 group-hover:text-[#FFB299] transition-colors">{guide.title}</h3>
                   <p className="text-white/80 text-[13.5px] font-medium">{guide.location}</p>
                 </div>
                 <div className="text-[#EA5E33] font-black text-[22px] drop-shadow-md">{guide.price}</div>
               </div>
-            </div>
+            </Link>
 
             {/* Action Buttons */}
             <div className="flex gap-3">

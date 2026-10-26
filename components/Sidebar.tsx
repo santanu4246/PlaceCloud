@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { HouseIcon, MapTrifoldIcon, UsersIcon, ChartIcon, SettingIcon, GearListIcon, SubscriptionIcon, PageCustomizationIcon } from "./icons";
 
 export default function Sidebar() {
@@ -11,12 +11,8 @@ export default function Sidebar() {
   
   const [pendingRoute, setPendingRoute] = useState<string | null>(null);
 
-  useEffect(() => {
-    setPendingRoute(null);
-  }, [pathname]);
-
   const isActive = (href: string) => {
-    if (pendingRoute) return pendingRoute === href;
+    if (pendingRoute && pendingRoute !== pathname) return pendingRoute === href;
     return pathname === href;
   };
   
